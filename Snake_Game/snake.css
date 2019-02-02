@@ -1,0 +1,38 @@
+html, body {
+	max-width: 100%;
+	overflow: hidden;
+}
+.holds_canvas{
+	display: inline-block;
+	background-image: url('tsnake_custom.jpg');
+	background-repeat: no-repeat;
+}
+.div2{
+	display: block;
+	padding: 30px;
+	text-align: center;
+}
+.header{
+	padding: 9px;
+	color: #fff;
+	background-color: black;
+	font-size:25px;
+	display: block;
+	width: 100%;
+	min-height: 30%;
+	text-align: center;
+}
+.footer{
+	background-color: black;
+	text-align: center;
+	color: #fff;
+	padding: 15px;
+	width: 100%;
+}
+.canvas{
+	display: inline-block;
+	padding: 30px;
+}
+.instruct{
+	font-size: 40px;
+}
