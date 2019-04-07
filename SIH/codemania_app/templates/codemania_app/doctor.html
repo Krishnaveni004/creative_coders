@@ -1,0 +1,339 @@
+
+ <!--changes made here ###### Sun Nov 4 20:36:51 IST 2018  -->
+ {% load staticfiles %}
+
+<!DOCTYPE html>
+<html>
+
+<head>
+
+
+    {% include 'codemania_app/navbar_doc.html' %}
+    <style>
+      .section-shaped .shape{
+        height: 70% !important;
+
+      }
+      .custom_margin{
+            margin-top: -174px !important;
+      }
+      .h1_margin{
+        margin-top: -56px !important;
+
+      }
+      .card-body{
+          background-color: #ccc3 !important;
+      }
+      </style>
+   <main>
+       <div class="position-relative">
+          <section class="section-shaped my-0 " >
+            <div class="shape shape-style-1 shape-primary  btn-success bg-gradient-success shape-skew" style="">
+              <span></span>
+              <span></span>
+              <span></span>
+              <span></span>
+              <span></span>
+              <span></span>
+              <span></span>
+              <span></span>
+              <span></span>
+            </div>
+            <div class="container container-lg shape-container d-flex">
+              <div class="col px-0">
+                  <div class="row">
+                      <div class="col text-center my-4">
+                        <h1 class="display-1 font-weight-bold text-white  mt-2 h1_margin">DOCTOR</h1>
+                      </div>
+                    </div>
+              </div>
+            </div>
+          </section>
+       <section class="custom_margin" id="width1">
+
+        <div class="row">
+          <div class="col-lg-12 my-3">
+                  <div class="card  border-0">
+                        <h1>Select patient data as you like..</h1>
+                      <form method="POST" action="doctor_2" enctype="multipart/form-data" >
+                                {% csrf_token %}
+                        <div class="row">
+
+                            <div class="col-sm-12">
+                                <select class="form-control" id="patient_id" name="pat" >
+                                    <option value="">Select Patient</option>
+                                    <option value="Random Patient">Random Patient</option>
+                                    <option value="Doctor Patient">Doctor Patient</option>
+
+                                </select>
+
+
+                              </div>
+
+                          </div>
+                      </form>
+                  </div>
+          </div>
+        </div>
+
+        <div class="row" id="RandomPatient" style="display:visible" name="random">
+        <div class="card-body ">
+<form method="POST" action="doctor_3" enctype="multipart/form-data" >
+                                {% csrf_token %}
+             <div class="row">
+                <div class="col-sm-4">
+                      <input type="text" name='aadhaar' id="aadhaar" class="form-control" placeholder="Aadhar Card No.">
+                </div>
+                <div class="col-sm-4">
+                      <input type="text" name='dob'  id="dob" class="form-control" placeholder="DOB">
+                </div>
+                <div class="col-sm-4">
+                    <button class="btn btn-success btn-block" id="search_rand">Search here</button>
+                </div>
+             </div>
+</form>
+
+
+            {% if e is not None %}
+                                               <table class="table table-striped">
+                                                 <tr>
+                                                     <th>PATIENT ID</th>
+                                                     <th>DOCTOR ID</th>
+                                                     <th>DISEASE</th>
+                                                     <th>DATE</th>
+                                                     <th>REPORTS</th>
+
+                                                 </tr>
+
+                                                  {% for i in e  %}
+
+
+                                                      <tr>
+                                                            <td>{{i.pid}}</td>
+
+
+                                                            <td>{{i.did}}</td>
+
+                                                          <td>{{i.diseasename}}</td>
+
+
+                                                          <td>{{i.date}}</td>
+
+                                                          <td>{{i.linkreport}}</td>
+                                                      </tr>
+
+                                                  {% endfor %}
+                                                    </table>
+                                                  {% endif %}
+
+
+
+
+
+
+             <p class="lead text-muted">
+             </p><div class="text-center my-4">
+             </div>
+           </div>
+           </div>
+
+
+        <div class="row" id="DoctorPatient" style="display:visible" name="doc_pat">
+        <div class="card-body ">
+            <form method="POST" action="doctor_1" enctype="multipart/form-data" >
+                                {% csrf_token %}
+             <div class="row">
+                <div class="col-sm-4">
+                      <input type="text" class="form-control" placeholder="Search here">
+                </div>
+                <div class="col-sm-4">
+                      <select class="form-control">
+                          <option value="">Sort Here</option>
+                          <option value="">Latest Data</option>
+                          <option value="">Oldest Data</option>
+                      </select>
+                </div>
+                <div class="col-sm-4">
+                    <button class="btn btn-success btn-block">Search here</button>
+                </div>
+             </div>
+            </form>
+
+             {% if c is not None %}
+                                               <table class="table table-striped">
+                                                 <tr>
+                                                     <th>PATIENT ID</th>
+                                                     <th>DOCTOR ID</th>
+                                                     <th>DISEASE</th>
+                                                     <th>DATE</th>
+                                                     <th>REPORTS</th>
+
+                                                 </tr>
+
+                                                  {% for i in c  %}
+
+
+                                                      <tr>
+                                                            <td>{{i.pid}}</td>
+
+
+                                                            <td>{{i.did}}</td>
+
+                                                          <td>{{i.diseasename}}</td>
+
+
+                                                          <td>{{i.date}}</td>
+
+                                                          <td>{{i.linkreport}}</td>
+                                                      </tr>
+
+                                                  {% endfor %}
+                                                    </table>
+                                                  {% endif %}
+
+
+
+
+
+             <p class="lead text-muted">
+             </p><div class="text-center my-4">
+             </div>
+           </div>
+           </div>
+
+
+
+               <div class="row" id="display_card" style="display:none">
+                     <div class="col-lg-12 my-3">
+                             <div class="card  shadow border-0">
+                                     <!--<img src="{% static 'img/theme/internlogos/datav.jpg' %}" alt="" class="img-fluid">-->
+                               <div class="card-body ">
+                                 <h6 class="display-4 text-uppercase">Welcome Doctor</h6>
+                                 <div class="row">
+                                     <div class="col-lg-8">
+                                             <p class="mt-3">
+                                                     <a href="" class="text-dark">Instructor</a>
+                                                     <br> <small class="text-dark">Will be announced soon..</small>
+                                                 </p>
+                                     </div>
+                                     <div class="col-lg-4 text-right">
+                                             <p class="font-weight-bold mt-3" style="color:rgb(252, 188, 11);">
+                                                     <i class="fa fa-star" aria-hidden="true"></i>
+                                                     <i class="fa fa-star" aria-hidden="true"></i>
+                                                     <i class="fa fa-star" aria-hidden="true"></i>
+                                                     <i class="fa fa-star" aria-hidden="true"></i>
+                                                     <i class="fa fa-star-half-full" aria-hidden="true"></i>
+                                                 </p>
+                                     </div>
+
+                                 </div>
+                                 <h4>Data Description</h4>
+
+                                   <table>
+                                     <tr>
+                                         <th>PATIENT ID</th>
+                                         <th>DOCTOR ID</th>
+                                         <th>DISEASE</th>
+                                         <th>DATE</th>
+                                         <th>REPORTS</th>
+
+                                     </tr>
+
+                                      {% for i in c  %}
+
+
+                                          <tr>
+                                                <td>{{i.pid}}</td>
+
+
+
+                                              <td>{{i.diseasename}}</td>
+
+
+                                              <td>{{i.date}}</td>
+
+                                              <td>{{i.linkreport}}</td>
+                                          </tr>
+
+                                      {% endfor %}
+                                        </table>
+
+                                 <p class="lead text-muted">
+
+                                  <!-- change starts here #:32pm 18th oct-->
+                                 <div class="text-center my-4">
+
+                                     <!--<a href="{% static 'docs/dvl.pdf' %}" class="btn btn-success bg-gradient-success" target="_blank">Download Syllabus</a>-->
+
+
+                                 </div>
+
+                                 <!--change ends here-->
+                               </div>
+
+                             </div>
+                           </div>
+
+               </div>
+               </section>
+                <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+                <script>
+                    $(function(){
+
+                        $(document).ready(function(){
+
+                          $('#RandomPatient').hide();
+                            $('#DoctorPatient').hide();
+                        });
+
+                        $('#search_rand').click(function(e){
+                            e.preventDefault();
+                            get_randam_data();
+                        })
+
+                      $('#patient_id').change(function(){
+
+                        var value = $(this).val();
+                        if(value == "Doctor Patient"){
+                            $('#RandomPatient').hide();
+                          $('#DoctorPatient').fadeIn(1000);
+                          #$('#DoctorPatient form .row:first').fadeIn(1000);
+                        }
+                        else if(value == "Random Patient"){
+                            //get_randam_data();
+                            #$('#RandomPatient').find('table.table').hide();
+                            $('#DoctorPatient').hide();
+                            $('#DoctorPatient form .row:first').hide();
+                          $('#RandomPatient').fadeIn(1000);
+                        }
+                        else{
+                          $('#RandomPatient').hide();
+                            $('#DoctorPatient').hide();
+                        }
+
+                      })
+                    })
+
+                    /*function get_randam_data(){
+                        var aadhar_card_no = $("#aadhaar").val();
+                        var dob = $("#dob").val();
+                        $.ajax({
+                            url:"",
+                            type:"GET",
+                            data:{"role":"aadhar_card_no","aadhar_card_no":aadhar_card_no,"dob":dob},
+                            success: function(data){
+                                console.log(data);
+                            }
+
+                        })
+
+
+                    }*/
+                  </script>
+
+
+
+
+   </main>
+   {% include 'codemania_app/footer_scripts.html' %}
+  <!--changes ends here ###### Sun Nov 4 20:36:51 IST 2018  -->

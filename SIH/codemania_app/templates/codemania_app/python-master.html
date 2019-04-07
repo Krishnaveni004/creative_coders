@@ -1,0 +1,178 @@
+{% load staticfiles %}
+
+<!DOCTYPE html>
+<html>
+
+<head>
+
+  
+    {% include 'codemania_app/navbar.html' %}
+
+  <main>
+    <div class="position-relative">
+      <section class="section-shaped my-0">
+        <div class="shape shape-style-1 bg-gradient-success shape-skew">
+          <span></span>
+          <span></span>
+          <span></span>
+          <span></span>
+          <span></span>
+          <span></span>
+          <span></span>
+          <span></span>
+          <span></span>
+        </div>
+        <div class="container container-lg shape-container d-flex">
+          <div class="col px-0">
+            <div class="row">
+              <div class="col text-center my-4">
+                <h1 class="display-1 font-weight-bold text-white  mt-2">Master Class In Python</h1>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+      <section>
+          <div class="container container-lg">
+              <div class="row">
+                    <div class="col-lg-8 my-3">
+                            <div class="card  shadow border-0">
+                                    <img src="{% static 'img/theme/internlogos/python.jpg' %}" alt="" class="img-fluid">
+                              <div class="card-body ">
+                                <h6 class="display-4 text-uppercase">Master Class In Python</h6>
+                                <div class="row">
+                                    <div class="col-lg-8">
+                                            <p class="mt-3">
+                                                    <a href="" class="text-success">Instructor</a>
+                                                    <br> <small class="text-dark">Will be announced soon...</small>
+                                                </p>
+                                    </div>
+                                    <div class="col-lg-4 text-right">
+                                            <p class="font-weight-bold mt-3" style="color:rgb(252, 188, 11);">
+                                                    <i class="fa fa-star" aria-hidden="true"></i>
+                                                    <i class="fa fa-star" aria-hidden="true"></i>
+                                                    <i class="fa fa-star" aria-hidden="true"></i>
+                                                    <i class="fa fa-star" aria-hidden="true"></i>
+                                                    <i class="fa fa-star-half-full" aria-hidden="true"></i>                  
+                                                </p>
+                                    </div>
+
+                                </div>
+                                <h4>Course Description</h4>
+                                <p class="lead text-muted">
+                                        Python is a multiparadigm, general-purpose, interpreted, high-level programming language. Python allows programmers to use different programming styles to create simple or complex programs, get quicker results and write code almost as if speaking in a human language. Some of the popular systems and applications that have employed Python during development include Google Search, YouTube, BitTorrent, Google App Engine, Eve Online, Maya and iRobot machines. 
+                                </p>
+                                <!-- <h4>Why Master Class in Python Internship Course? </h4>
+                                <p class="lead text-muted">
+                                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Recusandae aliquid eveniet ea deserunt at debitis. Odit nobis ullam quos libero qui quae itaque eos veritatis.
+                                </p> -->
+                                <!-- change starts here #:32pm 18th oct-->
+                                <div class="text-center my-4">
+                                      
+                                    <button class="btn btn-success" data-toggle="modal" data-target="#modal-default1">Download Syllabus</button>
+                                        
+                                        
+                                    <div class="modal fade" id="modal-default1" tabindex="-1" role="dialog" aria-labelledby="modal-default" aria-hidden="true">
+                                          <div class=" modal-dialog modal-dialog-centered" role="document">
+                                            <div class="modal-content bg-gradient-success">
+                                              
+                                              <div class="modal-body">
+                                                  <h3 class=" text-center text-white">
+                                                    Request for the syllabus <br> Contact : +91-7702535506 .
+                                                  </h2>
+                                              
+                                                      <button type="button" class="btn btn-sm my-2  btn-primary ml-auto" data-dismiss="modal">Close</button>
+                                                     
+                                              </div>
+                                              
+                                            </div>
+                                          </div>
+                                        </div>
+                                </div>
+
+                                <!--change ends here-->
+                              </div>
+                              
+                            </div>
+                          </div>
+                          <div class="col-lg-4 my-3">
+                              <div class="card shadow border-0">
+                                  <div class="card-header bg-gradient-success">
+                                      <h3 class="text-white text-center" >Internship Registration</h3>
+                                  </div>
+                                      <div class="card-body py-5">
+                                            <div class="icon icon-shape icon-shape-success rounded-circle mb-4">
+                                                <i class="ni ni-check-bold"></i>
+                                              </div>
+                                              <h6 class="text-success text-uppercase">Offline Registration</h6>
+                                              <h5 class="text-uppercase font-weight-bold mt-3">Price: <span class="display-4">₹​ 5,000.00</span></h5>
+                                              <p class="h5 mb-3"><small class="font-weight-bold">50% off <del> &nbsp;₹​ 10,000.00</del></small></p>
+                                              <div>
+                                                <span class="badge badge-pill badge-success">8 Days</span>
+                                                <span class="badge badge-pill badge-success">Offline Center</span>
+                                                
+                                              </div>
+                                              <button type="button" class="btn btn-block btn-success bg-gradient-success mt-4" data-toggle="modal" data-target="#modal-default">Register</button>
+                                              {% include 'codemania_app/internship_form.html' %}
+                                        
+                                       
+
+                                      
+                                                </div>
+                                        </div>
+                                      </div>
+                          </div>
+              </div>
+              </div>
+              </section>
+        
+  </main>
+  
+  <!-- Core -->
+
+  <!-- <script>
+    $(document).ready(function() {
+    
+      $("#City").change(function() {
+          var val = $(this).val();
+          console.log('val'+val);
+          if (val == "del") {
+              $("#Center").html('<div class="form-group">'
+                                +'<label for="workshopcenter">Choose City For Center</label>'
+                                                                                            
+                                +'<select name = "center"  class="custom-select form-control form-control-alternative">'
+                                +'<option value="none" selected = "selected" >Amity University</option>'
+                                +'</select>'
+                                                                                        
+                                +'</div>')
+            } 
+            else if (val == "grn") {
+              $("#Center").html("<option value='Galgotias College of Engineering'>Galgotias College of Engineering</option>");
+          } 
+          else if (val == "jln") {
+              $("#Center").html("<option value='Lovely Professional University'>Lovely Professional University</option>");
+    
+          }
+          else if (val == "hyd") {
+              $("#Center").html("<option value='BITS-Pilani Hyderabad Campus'>BITS-Pilani Hyderabad Campus</option>");
+    
+          }
+          else if (val == "goa") {
+              $("#Center").html("<option value='BITS-Pilani Goa'>BITS-Pilani Goa Campus</option>");
+    
+          }
+          else if (val == "deh"){
+            $("#Center").html("<option value='Dehradun Institute Technology'</option>");
+          }
+          else if (val == "kol"){
+            $("#Center").html("<option value='Jadhav University'</option>");
+          }
+      });
+    
+    });
+    </script> -->
+
+  {% include 'codemania_app/footer_scripts.html' %}
+</body>
+
+</html>

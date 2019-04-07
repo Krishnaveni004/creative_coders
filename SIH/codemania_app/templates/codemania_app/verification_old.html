@@ -1,0 +1,139 @@
+{% load staticfiles %}
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta name="description" content="Come and be the part of Aisa's largest hackathon and internship carnival, Codemania.">
+  <meta name="author" content="Code Mania">
+  <title>Code Mania</title>
+  
+    {% include 'codemania_app/navbar.html' %}
+    
+    
+     <main>
+    <div class="position-relative">
+      <section class="section-shaped my-0">
+        <div class="shape shape-style-1 shape-primary bg-gradient-primary shape-skew" style="">
+          <span></span>
+          <span></span>
+          <span></span>
+          <span></span>
+          <span></span>
+          <span></span>
+          <span></span>
+          <span></span>
+          <span></span>
+        </div>
+        <div class="container shape-container d-flex">
+          <div class="col px-0">
+            <div class="row">
+              <div class="col text-center my-4">
+                <h1 class="display-1 font-weight-bold text-white  mt-2">Verify Certificates For Winter Internship 2018</h1>
+              
+
+                <!-- <h2 class="display-2 font-weight-bold  mt-3" style="color : #E5F814; border-radius:20px; background-color: rgba(248, 0, 0, 0.301)">**Note : Registrations for first slot at Hyderabad Center are closed now.</span> -->
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+      <section>
+
+      <section class="my-5">
+            <div class="container ">
+                <div class="row">
+                    <div class="col text-center my-4">
+                        <h1 class="display-2">Choose your center to get your certificate verified</h1>
+                        <hr class="bg-dark" width="70px">
+                    </div>
+                </div>
+                <div class="row">
+                  
+                        <div class="col-lg-4 my-3">
+                            <a href="{% url 'verify' %}">
+                                <div class="card  shadow border-0">
+                                    <img src="{% static 'img/theme/internlogos/hyderabad.jpg' %} " alt="" class="img-fluid">
+                                  <div class="card-body ">
+                                    <h6 class="display-4 text-warning text-uppercase text-center">Hyderabad</h6>
+                                    <!-- <p class="lead mt-3 text-center">Date: 20th to 28th December </p> -->
+                                  </div>
+                                </div>
+                            </a>
+                               
+                              </div>   
+                              <div class="col-lg-4 my-3">
+                                    <div class="card  shadow border-0">
+                                        <img src="{% static 'img/theme/internlogos/kolkata.jpg' %} " alt="" class="img-fluid">
+                                      <div class="card-body ">
+                                        <h6 class="display-4 text-warning text-uppercase text-center">Kolkata</h6>
+                                        <p class="lead mt-3 text-center">Date: 15th to 23rd January </p>
+                                      </div>
+                                    </div>
+                                  </div>  
+                                  <div class="col-lg-4 my-3">
+                                        <div class="card  shadow border-0">
+                                            <img src="{% static 'img/theme/internlogos/noida.jpg' %} " alt="" class="img-fluid">
+                                          <div class="card-body ">
+                                            <h6 class="display-4 text-success text-uppercase text-center">Greater Noida</h6>
+                                            <p class="lead mt-3 text-center">Date: 15th to 23rd January </p>
+                                          </div>
+                                        </div>
+                                      </div>  
+                </div>
+                <div class="row">
+                        <div class="col-lg-4 my-3">
+                                <div class="card  shadow border-0">
+                                    <img src="{% static 'img/theme/internlogos/goa.jpg' %} " alt="" class="img-fluid">
+                                  <div class="card-body ">
+                                    <h6 class="display-4 text-dark text-uppercase text-center">Goa</h6>
+                                    <p class="lead mt-3 text-center">Date: 15th to 23rd January </p>
+                                  </div>
+                                </div>
+                              </div>
+                              <div class="col-lg-4 my-3">
+                                  <div class="card  shadow border-0">
+                                      <img src="{% static 'img/theme/internlogos/delhi.jpg' %} " alt="" class="img-fluid">
+                                    <div class="card-body ">
+                                      <h6 class="display-4 text-primary text-uppercase text-center">Delhi</h6>
+                                      <p class="lead mt-3 text-center">Date: 15th to 23rd January </p>
+                                    </div>
+                                  </div>
+                                  </div>
+                                  <div class="col-lg-4 my-3">
+                                    <div class="card  shadow border-0">
+                                        <img src="{% static 'img/theme/internlogos/dehradun.jpg' %} " alt="" class="img-fluid">
+                                      <div class="card-body ">
+                                        <h6 class="display-4 text-danger text-uppercase text-center">Dehradun</h6>
+                                        <p class="lead mt-3 text-center">Date: 15th to 23rd January </p>
+                                      </div>
+                                    </div>
+                                  </div>
+                </div>
+                <div class="row">
+                  <div class="col-md-6 mx-auto my-3">
+                      <div class="card  shadow border-0">
+                          <img src="{% static 'img/theme/internlogos/jalandhar.jpg' %} " alt="" class="img-fluid">
+                        <div class="card-body ">
+                          <h6 class="display-4 text-primary text-uppercase text-center">Jalandhar</h6>
+                          <p class="lead mt-3 text-center">Date: 28th January to 4th February </p>
+                        </div>
+                      </div>
+                  </div>
+                </div>
+                <div class="row">
+                    <div class="col mt-3">
+                        <blockquote class="blockquote">
+                          
+                           <!-- <h3 class="lead text-warning text-center">Note: Registration fee is refundable if you do not get an internships</h3> -->
+                        </blockquote>
+                    </div>
+                </div>
+      </section>
+  </main>
+  
+  {% include 'codemania_app/footer_scripts.html' %}
+</body>
+
+</html>

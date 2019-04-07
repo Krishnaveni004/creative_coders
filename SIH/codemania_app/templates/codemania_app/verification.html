@@ -1,0 +1,67 @@
+{% load staticfiles %}
+<!DOCTYPE html>
+<html>
+
+<head>
+
+
+    {% include 'codemania_app/navbar.html' %}
+    
+    
+     <main>
+    <div class="position-relative">
+      <section class="section-shaped my-0">
+        <div class="shape shape-style-1 shape-primary shape-skew" style=" background-image: url('static/img/theme/4.jpeg');
+        background-size:cover;
+        background-repeat: no-repeat; filter: brightness(46%)">
+          <span></span>
+          <span></span>
+          <span></span>
+          <span></span>
+          <span></span>
+          <span></span>
+          <span></span>
+          <span></span>
+          <span></span>
+        </div>
+        <div class="container container-lg shape-container d-flex">
+          <div class="col px-0">
+            <div class="row">
+              <div class="col text-center my-4">
+                <h1 class="display-1 font-weight-bold text-white  mt-2">Verify Certificates For Winter Internship 2018</h1>
+              
+
+                <!-- <h2 class="display-2 font-weight-bold  mt-3" style="color : #E5F814; border-radius:20px; background-color: rgba(248, 0, 0, 0.301)">**Note : Registrations for first slot at Hyderabad Center are closed now.</span> -->
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+      <section>
+
+      <section class="my-5">
+            <div class="container container-lg ">
+                <div class="row">
+                    <div class="col-md-8 mx-auto text-center bg-gradient-red py-4 rounded shadow shadow-lg--hover">
+                      <form method="POST" action="{% url 'verify_details' %}">
+                          {% csrf_token %}
+                      <h1 class="my-4 bg-gradient-red">Enter Your Certification no</h1>
+                          <div class="form-group  my-5">
+                                   <div class="input-group input-group-alternative mb-4">
+                                     <input name="certification_no" required type="text" placeholder="Enter Certification Number" class="form-control form-control-lg py-3" />
+                                     <button type="submit" class="btn btn-primary bg-gradient-primary">Submit</button>
+                                    
+                                   </div>
+                                 </div>
+                    </form>
+                                </div>
+                </div> 
+             </div>
+             </section>
+  </main>
+ 
+  {% include 'codemania_app/footer_scripts.html' %}
+
+</body>
+
+</html>

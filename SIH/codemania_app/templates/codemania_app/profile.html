@@ -1,0 +1,189 @@
+{% load staticfiles %}
+
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta name="description" content="Come and be the part of Aisa's largest hackathon and internship carnival, Codemania.">
+  <meta name="author" content="Code Mania">
+  <title>Code Mania</title>
+
+  <script>
+    window.onload = function() {
+    
+    var chart = new CanvasJS.Chart("chartContainer", {
+      animationEnabled: true,
+      title: {
+        text: "Performance in {{course_name}} "
+      },
+      data: [{
+        type: "pie",
+        startAngle: 240,
+        yValueFormatString: "##0.00\"%\"",
+        indexLabel: "{label} {y}",
+        dataPoints: [
+          {y:  {{student.communication_skills}}, label: "Communication Skill"},
+          {y:  {{student.ability_to_grasp}}, label: "Ability to Gasp"},
+          {y:  {{student.technical_skills}}, label: "Technical Skill"},
+        ]
+      }]
+    });
+    chart.render();
+    
+    }
+    </script>
+    {% include 'codemania_app/navbar.html' %}
+    
+    
+     <main>
+    <div class="position-relative">
+      <section class="section-shaped my-0">
+        <div class="shape shape-style-1 shape-warning bg-gradient-red shape-skew" style="">
+          <span></span>
+          <span></span>
+          <span></span>
+          <span></span>
+          <span></span>
+          <span></span>
+          <span></span>
+          <span></span>
+          <span></span>
+        </div>
+        <div class="container shape-container d-flex">
+          <div class="col px-0">
+            <div class="row">
+              <div class="col text-center my-4">
+                <h1 class="display-1 font-weight-bold text-white  mt-2">Verify Certificates For Winter Internship 2018</h1>
+              
+
+                <!-- <h2 class="display-2 font-weight-bold  mt-3" style="color : #E5F814; border-radius:20px; background-color: rgba(248, 0, 0, 0.301)">**Note : Registrations for first slot at Hyderabad Center are closed now.</span> -->
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="my-5">
+            <div class="container container-lg  ">
+                <div class="row mt-5 mb-4">
+                    <div class="col-md-9 mx-auto py-4 rounded">
+                      <div class="row">
+                        <div class="col">
+                          <div class="card shadow shadow-lg--hover">
+                            <div class="card-header  text-center  bg-gradient-red ">
+                              <div class="row">
+                                <div class="col-md-5 rounded">
+                                    <img src="{{MEDIA_URL}}{{student.picture}}" class="img-fluid shadow rounded shadow-lg--hover rounded-circle">
+                                </div>
+                                <div class="col-md-7 align-self-center">
+                                    <h1 class=" mb-2"> {{student.name}}</h1>
+                                    <h2>CodeMania Certified -  {{course_name}}</h2>
+                                    </div>
+                        </div>
+                            </div>
+                            <div class="card-body text-center">
+                              <h4>{{student.name}} Has attended the {{student.program_name}} Internship Program organised by Codemania and His/Her performance in the Internship was Satisfactory</h4>
+
+                              <h2 class=" my-4 text-center">Performance</h2>
+                              <div id="chartContainer" style="height: 370px; width: 100%;"></div>
+<script src="https://canvasjs.com/assets/script/canvasjs.min.js"></script>
+                                <h2 class="my-4">Average Performance in your internship</h2>
+                                <div class="progress ">
+                                    <div class="progress-bar bg-gradient-red" role="progressbar" style="width: {{student.average_performance}}%;"
+                                        aria-valuenow="25" aria-valuemin="0" aria-valuemax="100"></div>
+                                      
+                                </div>
+                              <h4 class=" text-center"> {{student.average_performance}}%</h4>
+                              <h2 class="my-4">Average Performance required by our Top Hiring companies</h2>
+                                <div class="progress ">
+                                    <div class="progress-bar bg-gradient-green" role="progressbar" style="width: {{student.performance_expected}}%;"
+                                        aria-valuenow="25" aria-valuemin="0" aria-valuemax="100"></div>
+                                      
+                                </div>
+                                <h4 class=" text-center"> {{student.performance_expected}}%</h4>
+                              {% if  student.average_performance <  student.performance_expected %}
+                              <h4 class="my-2 text-danger">Your Performance must be improved to get hired in our top hiring companies
+                                <button class="btn btn-primary">Upgrade your skills with an online test</button>
+                              </h4>
+                              {% else %}
+                              <h4 class="my-2 text-success">You're eligible to be hired in our Top Hiring companies
+                                </h4>
+                              {% endif %}
+                        
+                              <div class="text-center my-4">
+
+                              <button class="btn btn-success bg-gradient-success company-btn">Recommended Companies</button>
+                               
+                              <!-- <p class=" font-weight-normal companies d-none text-danger display-4 mt-4">We're Working on it We'll get back to you soon.. :) </p> -->
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                      </div>
+                      <div class="companies d-none">
+                        <div class="row">
+                          <div class="col">
+                            <h2 class="display-3 text-center">Companies Matching Your Performance On <br> {{course_name}} </h2>
+                          </div>
+                        </div>
+                        <div class="row my-5">
+                          {% for i in company %}
+                          <div class="col-md-4">
+                            <div class="card shadow shadow-lg--hover">
+                              <div class="text-center card-header bg-secondary shadow shadow-lg--hover">
+                                 <div class="row"> 
+                                   <div class="col-6 mx-auto">
+                                    <img src="{% static 'img/theme/paytm.png'  %}" alt="" class="img-fluid">
+                                   </div>
+                                 </div>
+                              </div>
+                              <div class="card-body">
+                                <!-- <h4>Paytm.com</h4> -->
+                               <h6><i class="fa fa-map-marker"></i> {{i.location}}</h6>
+                              
+                               <h4 class=" mt-3 text-underline">Job Description:</h4>
+                               <p class="lead mt-2" style="font-size:1.05rem">{{i.job_description}}</p>
+                               <h4 class=" text-underline">Skills Required:</h4>
+                               <ul>
+                                 {% for skill in skills %}
+                                 <li>{{skill.content}}</li>
+                                 {% endfor %}
+                               </ul>
+                               <h4 class="mb-3">Salary offered:&nbsp; <i class="fa fa-rupee"></i>{{i.salary}}</h4>
+                               <h5 ><i class="fa fa-file"></i> Upload Your Resume</h5>
+                               <form action="upload_resume">
+                                <div class="input-group input-group-alternative mt-2">
+                                  <input name="resume" required type="file" placeholder="Your Name" class="form-control" />
+                                </div>
+                                <div class="text-center my-3">
+                                  <button class="btn btn-info bg-gradient-info">Apply Now</button>
+                                </div>
+                               </form>
+                              </div>
+                            </div>
+                          </div>
+                          {% endfor %}  
+                        </div>
+                        
+                      </div>
+                    </div>
+             </section>
+  </main>
+ 
+ 
+  {% include 'codemania_app/footer_scripts.html' %}
+<script>
+$(()=>{
+  $(".company-btn").click(()=>{
+    $(".companies").removeClass("d-none");
+  })
+})
+</script>
+
+</body>
+
+</html>

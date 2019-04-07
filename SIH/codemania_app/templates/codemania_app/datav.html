@@ -1,0 +1,163 @@
+
+ <!--changes made here ###### Sun Nov 4 20:36:51 IST 2018  -->
+ {% load staticfiles %}
+
+<!DOCTYPE html>
+<html>
+
+<head>
+
+
+    {% include 'codemania_app/navbar.html' %}
+
+    <style>
+      .bg-gradient-success{
+            background: linear-gradient(87deg, #030605 0, #3d9a99 100%) !important;
+      }
+      @media (min-width: 1992px)
+      .col12 {
+      max-width: 100%;
+      flex: 0 0 100%;
+}
+      </style>
+   <main>
+       <div class="position-relative">
+          <section class="section-shaped my-0">
+            <div class="shape shape-style-1 shape-primary  btn-success bg-gradient-success shape-skew" style="">
+              <span></span>
+              <span></span>
+              <span></span>
+              <span></span>
+              <span></span>
+              <span></span>
+              <span></span>
+              <span></span>
+              <span></span>
+            </div>
+            <div class="container container-lg shape-container d-flex">
+              <div class="col px-0">
+                <div class="row">
+                  <div class="col text-center my-4">
+                    <h1 class="display-1 font-weight-bold text-white  mt-2 ">NCORD</h1>
+                    <h2 class="display-2 font-weight-bold text-white  mt-1">Check your Health History
+                      <span class="my-3">Benefits through Innovative Solutions</span>
+                    </h2>
+                     <!-- <h3 class="display-4 text-white">Last Date: 19th December, 2018</h3> -->
+                     <form class="" action="{% url 'patient' %}" method="POST">
+                      {% csrf_token %}
+
+                     <input type="submit" class="btn btn-default btn-icon my-3 mb-sm-0" name="set" value="check the data">
+
+
+                      {% if pri == "check the data" %}
+                     <section class="" id="width1">
+                             <div class="row">
+                                   <div class="col12">
+                                           <div class="card  shadow border-0">
+                                                  <!-- <img src="{% static 'img/theme/internlogos/datav.jpg' %}" alt="" class="img-fluid"> -->
+                                             <div class="card-body ">
+                                               <h6 class="display-4 text-uppercase">Patient </h6>
+                                               <div class="row">
+                                                <form method="POST" action="patient" enctype="multipart/form-data" >
+                                {% csrf_token %}
+                                                  <!--<div class="col-sm-4">
+
+                                                        {% csrf_token %}
+                                                        <input type="text" class="form-control" name="search" placeholder="Search here">
+                                                  </div>
+                                                  <div class="col-sm-4">
+                                                        <select class="form-control">
+                                                            <option value="">Sort Here</option>
+                                                            <option value="">Latest Data</option>
+                                                            <option value="">Oldest Data</option>
+                                                        </select>
+                                                  </div>
+                                                  <div class="col-sm-4">
+                                                      <button name="but" class="btn btn-success btn-block">Search here</button>
+                                                  </div>-->
+                                                </form>
+                                               </div>
+                                             </div>
+
+                                            <!--    <h4>Course Description</h4> -->
+                                               <p class="lead text-muted">
+
+
+
+                                               <table class="table table-striped">
+                                                 <tr>
+                                                     <th>PATIENT ID</th>
+                                                     <th>DOCTOR ID</th>
+                                                     <th>DISEASE</th>
+                                                     <th>DATE</th>
+                                                     <th>REPORTS</th>
+                                                     <th>PATIENT NAME</th>
+                                                     <th>DOCTOR NAME</th>
+                                                     <th>HOSPITAL NAME</th>
+
+
+                                                 </tr>
+
+                                                  {% for i in c  %}
+
+
+                                                      <tr>
+                                                            <td>{{i.pid}}</td>
+
+
+                                                            <td>{{i.did}}</td>
+
+                                                          <td>{{i.diseasename}}</td>
+
+
+                                                          <td>{{i.date}}</td>
+
+                                                          <td><a href="https://drive.google.com/file/d/1GJ9f7Thq17m-LraAoD0DfjB-bKuxyBuM/view?usp=sharing">Click for reports</a></td>
+                                                          <td>{{i.pname}}</td>
+                                                          <td>{{i.dname}}</td>
+                                                          <td>{{i.hname}}</td>
+                                                      </tr>
+
+                                                  {% endfor %}
+                                                    </table>
+                                                  {% endif %}
+
+                                                <!-- change starts here #:32pm 18th oct-->
+                                               <div class="text-center my-4">
+
+                                                  <!--  <a href="{% static 'docs/dvl.pdf' %}" class="btn btn-success bg-gradient-success" target="_blank">Download Syllabus</a> -->
+
+
+                                               </div>
+
+                                               <!--change ends here-->
+                                             </div>
+
+                                           </div>
+                                         </div>
+
+
+
+                     </form>
+
+
+
+                      <!-- <a href="" class="btn btn-default btn-icon my-3 mb-sm-0">
+                        <span class="btn-inner--text">Register For Hackathon</span>
+                        <span class="btn-inner--icon"><i class="fa fa-arrow-right"></i></span>
+                      </a> -->
+
+                      <!-- <h2 class="display-2 font-weight-bold  mt-3" style="color : #E5F814; border-radius:20px; background-color: rgba(248, 0, 0, 0.301)">**Note : Registrations for first slot at Hyderabad Center are closed now.</span> -->
+                        <!-- <h2 class="display-2 font-weight-bold text-danger mt-1"></span> -->
+
+                  </div>
+                </div>
+              </div>
+            </div>
+          </section>
+2
+
+
+
+   {% include 'codemania_app/footer_scripts.html' %}
+  <!--changes ends here ###### Sun Nov 4 20:36:51 IST 2018  -->

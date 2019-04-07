@@ -1,0 +1,171 @@
+{% load staticfiles %}
+
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<meta name="description" content="Come and be the part of Aisa's largest hackathon and internship carnival, Codemania.">
+<meta name="author" content="Code Mania">
+<meta name="keywords" content="Internships, Hackathons, Technologies">
+
+<meta name="keywords" content=" Machine_Learning, IoT, Artificial Intelligence, Moblie application development, Electric Vehicles, Blockchain, Cyber security, Auto CAD ">
+<title>NCORD HEALTH</title>
+
+<!-- Favicon -->
+<link href="{% static 'img/brand/ncord_30.png' %}" rel="icon" type="image/png">
+<!-- Fonts -->
+<link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,600,700|Material+Icons" rel="stylesheet">
+<!-- Icons -->
+<link href="{% static 'vendor/nucleo/css/nucleo.css' %}" rel="stylesheet">
+<link href="{% static 'vendor/font-awesome/css/font-awesome.min.css' %}" rel="stylesheet">
+<!-- Argon CSS -->
+<link type="text/css" href="{% static 'css/argon.css' %}" rel="stylesheet">
+<!-- Docs CSS -->
+<link type="text/css" href="{% static 'css/docs.min.css' %}" rel="stylesheet">
+
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/owl-carousel/1.3.3/owl.carousel.min.css">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/owl-carousel/1.3.3/owl.theme.min.css">
+<!--custom-->
+<link rel="stylesheet" href="{% static 'css/style.css' %}">
+
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-131818330-1"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'UA-131818330-1');
+</script>
+</head>
+
+<body>
+<header class="header-global">
+    <nav id="navbar-main" class="navbar headroom navbar-main navbar-expand-lg navbar-transparent ">
+      <div class="container container-lg">
+        <a class="navbar-brand mr-lg-5" href="{% url 'index' %}">
+          <img src="{% static 'img/brand/ncord.png' %}" class="rounded-circle">
+          <span class="ml-1">NCORD HEALTH</span>
+        </a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbar_global" aria-controls="navbar_global" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="navbar-collapse collapse" id="navbar_global">
+          <div class="navbar-collapse-header">
+            <div class="row">
+              <div class="col-6 collapse-brand">
+                <a href="{% url 'index' %}">
+                  <img src="{% static 'img/brand/ncord.png' %}" class="rounded-circle">
+                  <span class="ml-1">NCORD HEALTH</span>
+                </a>
+              </div>
+              <div class="col-6 collapse-close">
+                <button type="button" class="navbar-toggler" data-toggle="collapse" data-target="#navbar_global" aria-controls="navbar_global" aria-expanded="false" aria-label="Toggle navigation">
+                  <span></span>
+                  <span></span>
+                </button>
+              </div>
+            </div>
+          </div>
+  <!-- change ends here-->
+  <!-- changes made here 2:12pm 19oct-->
+  <ul class="navbar-nav ml-auto navbar-nav-hover align-items-lg-center">
+    <li class="nav-item">
+      <a href="{% url 'index' %}" style="font-size:1em;" class="active nav-link">Home</a>
+    </li>
+
+
+
+
+    <li class="nav-item">
+      <a href="{% url 'doctor' %}" style="font-size:1em;"  class="nav-link">Doctor</a>
+    </li>
+    <li class="nav-item">
+      <a
+      href="{% url 'data_virt' %}" style="font-size:1em;"  class="nav-link">Find a Hospital</a>
+    </li>
+    <li class="nav-item">
+      <a href="" style="font-size:1em;"  class="nav-link">About us</a>
+    </li>
+
+{% if messages %}
+    {% for i in messages %}
+
+
+
+    <span class="nav-link">{{ i }}</span>
+
+<li class="nav-item dropdown  d-none d-lg-block">
+                <a style="font-size:1em" class="nav-link" data-toggle="dropdown" href="#" role="button">
+                  <i class="fa fa-navicon" aria-hidden="true"></i>
+
+                </a>
+                <div class="dropdown-menu dropdown-menu-right bg-gradient-dark">
+                  <div class="dropdown-menu-inner">
+                    <a href="{% url 'logout' %}" style="font-size:1em" class="media d-flex align-items-center">
+                      <div class="icon icon-sm icon-shape bg-gradient-primary rounded-circle text-white">
+                        <i class="material-icons" style="font-size:1.6em">face</i>
+                      </div>
+                      <div class="media-body ml-3">
+                        <h6 class=" text-primary mb-md-1" style="font-size:1em">Logout</h6>
+                      </div>
+                    </a>
+
+                  </div>
+                </div>
+
+              </li>
+
+    {% endfor %}
+
+
+
+    {% else %}
+
+
+
+          <!-- changes made here today ###### Fri Oct 19 21:36:58 IST 2018-->
+
+          <li class="nav-item d-lg-none">
+
+              <a style="font-size:1em;"  class="nav-link" href="{% url 'login' %}">Login</a>
+
+            </li>
+            <li class="nav-item d-lg-none">
+                <a style="font-size:1em;"  class="nav-link" href="{% url 'register' %}">Register</a>
+              </li>
+
+              <li class="nav-item dropdown  d-none d-lg-block">
+                <a style="font-size:1em" class="nav-link" data-toggle="dropdown" href="#" role="button">
+                  <i class="fa fa-navicon" aria-hidden="true"></i>
+
+                </a>
+                <div class="dropdown-menu dropdown-menu-right bg-gradient-dark">
+                  <div class="dropdown-menu-inner">
+                    <a href="{% url 'login' %}" style="font-size:1em" class="media d-flex align-items-center">
+                      <div class="icon icon-sm icon-shape bg-gradient-primary rounded-circle text-white">
+                        <i class="material-icons" style="font-size:1.6em">face</i>
+                      </div>
+                      <div class="media-body ml-3">
+                        <h6 class=" text-primary mb-md-1" style="font-size:1em">Login</h6>
+                      </div>
+                    </a>
+                    <a href="{% url 'register' %}" style="font-size:1em"  class="media d-flex align-items-center">
+                      <div class="icon icon-sm icon-shape bg-gradient-success rounded-circle text-white">
+                        <i class="material-icons" style="font-size:1.6em">account_circle</i>
+                      </div>
+                      <div class="media-body ml-3">
+                        <h6 class=" text-primary mb-md-1" style="font-size:1em">Register</h6>
+                      </div>
+                    </a>
+                  </div>
+                </div>
+
+              </li>
+ {% endif %}
+
+              <!-- change ends here today ###### Fri Oct 19 21:37:39 IST 2018-->
+  </ul>
+
+      </div>
+  </div>
+</nav>
+</header>
